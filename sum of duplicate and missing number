@@ -1,0 +1,38 @@
+<h1> given an array in which there is a duplicate and missing number return the sum of duplicate and missing number.
+eg arr[] = {4,3,3,1}  dup = 3 and missing is 2 so sum will be 2+3 = 5 </h1>
+
+#include <bits/stdc++.h>
+#include<iostream>
+
+using namespace std;
+int main() {
+	int n,dup,mis;
+	cin>>n;
+	int arr[n];
+	for(int i=0;i<n;i++)
+	{
+	    cin>>arr[i];
+	}
+	sort(arr,arr+n);
+	for(int i=0;i<n;i++)
+	{
+	    if(arr[i]==arr[i+1])
+	    {
+	        dup=arr[i];
+	    }
+	}
+	for(int i=0;i<n;i++)
+	{
+	    if(arr[i]==i+1)
+	    {
+	        continue;
+	    }
+	    else
+	    {
+	        mis=i+1;
+	    }
+	}
+	int sum=dup+mis;
+	cout<<sum;
+	return 0;
+}
